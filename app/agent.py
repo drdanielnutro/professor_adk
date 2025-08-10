@@ -53,6 +53,9 @@ research_pipeline = SequentialAgent(
 
 
 # Main interactive planner agent
+# NOTE: In ADK, context is automatically passed between agents through the framework.
+# Sub-agents defined in the sub_agents list will receive the full conversation context
+# without explicit parameter passing. Do NOT use transfer_to_agent() or similar functions.
 interactive_planner_agent = LlmAgent(
     name="adk_interactive_planner",
     model=config.worker_model,
@@ -66,7 +69,7 @@ interactive_planner_agent = LlmAgent(
     Your workflow is:
     1.  **Plan:** Use `adk_plan_generator` to create a draft plan focused on ADK documentation.
     2.  **Refine:** Incorporate user feedback until the plan is approved.
-    3.  **Execute:** Once the user gives EXPLICIT approval (e.g., "looks good, run it"), you MUST delegate the task to the `research_pipeline` agent, passing the approved plan.
+    3.  **Execute:** Once the user gives EXPLICIT approval (e.g., "looks good, run it"), simply confirm that you'll start the research using the approved plan. The `research_pipeline` will automatically receive the context and execute the plan.
 
     Current date: {datetime.datetime.now().strftime("%Y-%m-%d")}
     Remember: All research is conducted EXCLUSIVELY within the official ADK documentation. Do not perform any research yourself.

@@ -20,7 +20,7 @@ ENHANCED_SEARCH_PROMPT = """
     You have been activated because the previous research was graded as 'fail'.
 
     1.  Review the 'research_evaluation' state key to understand the feedback and required fixes.
-    2.  Execute EVERY query listed in 'follow_up_queries' using the 'google_search' tool. Remember to prepend `site:google.github.io/adk-docs/` to each query.
+    2.  Execute EVERY query listed in 'follow_up_queries' using the 'google_search' tool. Remember to prepend `site:https://google.github.io/adk-docs/api-reference/python/` to each query.
     3.  Synthesize the new findings and COMBINE them with the existing information in 'section_research_findings'.
     4.  Your output MUST be the new, complete, and improved set of research findings.
     """

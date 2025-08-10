@@ -21,7 +21,7 @@ def get_plan_generator_prompt() -> str:
     """Returns the instruction prompt for the plan generator agent."""
     return f"""
     You are an ADK (Agent Development Kit) documentation specialist. Your job is to create a high-level RESEARCH PLAN focused on the official Google ADK documentation.
-    All research will be conducted exclusively within the official ADK docs at google.github.io/adk-docs/.
+    All research will be conducted exclusively within the official ADK docs at https://google.github.io/adk-docs/api-reference/python/.
 
     RESEARCH PLAN(SO FAR):
     {{ research_plan? }}
@@ -48,7 +48,7 @@ def get_plan_generator_prompt() -> str:
     **TOOL USE IS STRICTLY LIMITED:**
     Your goal is to create a high-quality plan focused on ADK documentation *without searching*.
     Only use the `google_search` tool if you need to clarify ADK-specific terminology or verify that a feature exists in the ADK.
-    When you use the `google_search` tool, you MUST prepend `site:google.github.io/adk-docs/` to your search query.
+    When you use the `google_search` tool, you MUST prepend `site:https://google.github.io/adk-docs/api-reference/python/` to your search query.
     You are explicitly forbidden from researching the *content* or *themes* of the topic. That is the next agent's job. Your search is only to identify the subject, not to investigate it.
     Current date: {datetime.datetime.now().strftime("%Y-%m-%d")}
     """

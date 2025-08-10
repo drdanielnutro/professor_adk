@@ -1,9 +1,4 @@
-# Codebase Research Report
-
-## Query
-preciso de um arquivo .mmd de todo o diretorio. Foco especial para o arquivo agent.py e config.py. devem ser detalhados de forma expandida. Citando prompt, subagentes, ferramentas.
-
-## Answer
+# Answer
 # Relatório de Análise do Diretório `app`
 
 Este relatório detalha a estrutura e o funcionamento do diretório `app`, com foco especial nos arquivos `agent.py` e `config.py`, que são centrais para a orquestração e configuração do agente.
